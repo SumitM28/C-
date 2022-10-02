@@ -1,0 +1,64 @@
+// find the first and last occurance of an element  
+
+#include<iostream>
+using namespace std;
+
+// binary search for find the left most index of the key.
+int firstOccu(int arr[], int size,int key){
+
+    int s=0;
+    int e=size-1;
+    int ans=-1;
+    while (s<=e)
+    {
+        int mid=s+(e-s)/2;
+        if(arr[mid]==key){
+            ans=mid;
+            e=mid-1;
+        }
+        else if(arr[mid]>key){
+            e=mid-1;
+        }else{
+            s=mid+1;
+        }
+    }
+    return ans;
+}
+// binary search for find the right most index of the key.
+int lastOccu(int arr[], int size,int key){
+
+    int s=0;
+    int e=size-1;
+    int ans=-1;
+    while (s<=e)
+    {
+        int mid=s+(e-s)/2;
+        if(arr[mid]==key){
+            ans=mid;
+            s=mid+1;
+        }
+        else if(arr[mid]>key){
+            e=mid-1;
+        }else{
+            s=mid+1;
+        }
+    }
+    return ans;
+}
+
+
+
+
+
+int main(){
+
+    int arr[9]={0, 5, 5, 6, 6, 6,6,6,6};
+    int key=6;
+    
+    // int arr[8]={0,0,1,1,2,2,2,2};
+    // int key=2;
+   
+    cout<<"First occurence of 6 at the index "<<firstOccu(arr,9,key)<<endl;
+    cout<<"last occurence of 6 at the index "<<lastOccu(arr,9,key)<<endl;
+
+}
