@@ -23,6 +23,7 @@ class Car{
 
 
 int main(){
+    // statically object creation
 
     Car car;
     car.carName="Honda";
