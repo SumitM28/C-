@@ -26,6 +26,7 @@ class Subtraction{
         return a-b;
     }
 
+    // overloading using different type of data's arguments
     double sub(double a,double b){
         return a-b;
     }
