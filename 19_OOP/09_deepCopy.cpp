@@ -11,7 +11,7 @@ class Box{
     public:
     int *breadth;
     Box(){
-        breadth=new int;
+        this->breadth=new int;
     }
 
     void setValues(int a,int b ,int c){
