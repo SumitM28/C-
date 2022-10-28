@@ -49,6 +49,7 @@ public:
     }
 };
 
+// brute force solution
 void addAtTail(Node* &head,int data){
 
     Node* newNode= new Node(data);
@@ -98,6 +99,39 @@ Node* cloneLinkedList(Node* head){
 
 }
 
+
+// optimize solution
+Node* cloneLL(Node* head){
+    Node* clone=NULL;
+    Node* temp=head;
+    while (temp!=NULL)
+    {
+        addAtTail(clone,temp->data);
+        temp=temp->next;
+
+    }
+    
+    map<Node*,Node*>mapping;
+    temp=head;
+    Node* temp2=clone;
+    while (temp!=NULL)
+    {
+        mapping[temp]=temp2;
+        temp=temp->next;
+        temp2=temp2->next;
+    }
+    
+    temp=head;
+    temp2=clone;
+    while(temp2!=NULL){
+        temp2->random=mapping[temp->random];
+        temp=temp->next;
+        temp2=temp2->next;
+    }
+
+    return clone;
+
+}
 int main(){
 
     LinkedList* LL= new LinkedList();
@@ -115,13 +149,13 @@ int main(){
     
     LL->printData();
 
-    Node* clone=cloneLinkedList(head);
+    Node* clone=cloneLL(head);
     // while (clone!=NULL)
     // {
     //     cout<<clone->data<<" ";
     //     clone=clone->next;
     // }
     
-    cout<<clone->next->next->next->next->random->data;
+    cout<<clone->next->random->next->data;
     
 }
