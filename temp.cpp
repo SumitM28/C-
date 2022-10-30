@@ -1,29 +1,45 @@
-#include<iostream>
-#include<vector>
-#include<string>
+#include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-    int n;
-    cout<<"Enter the value:";
-    cin>>n;
-    vector<vector<int>>m(n,vector<int>(n,0));
 
-    for (int i = 0; i < n; i++)
-    {
-        for(int j=0;j<n;j++){
-            cin>>m[i][j];
-        }
+
+
+
+
+int compare(int a,int b,int n){
+
+    if (!(n & 1)) {
+ 
+        a = abs(a);
+        b = abs(b);
     }
-    vector<vector<int>>visited=m;
-    int x=0,y=0;
-    string out="";
-    vector<string>ans;
-    solve(m,x,y,visited,out,ans);
-    for (int i = 0; i < ans.size(); i++)
-    {
-       cout<<ans[i];
+
+    // cout<<temp1<<" "<<temp2<<endl;
+    if(a>b){
+        return 1;
     }
+    else if( a<b){
+        return 2;
+    }
+    
+    else if( a==b){
+        return 0;
+    }
+
+}
+int main(){
+    
+    int t;
+    cin>>t;
+    while (t--)
+    {
+    int a,b,n;
+    cin>>a>>b>>n;
+    
+    int ans= compare(a,b,n);
+    cout<<ans;
+    }
+    
     
 
 }
