@@ -44,7 +44,9 @@
     "list": "cpp",
     "map": "cpp",
     "set": "cpp",
-    "hash_map": "cpp"
+    "hash_map": "cpp",
+    "bitset": "cpp",
+    "chrono": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled",
   "C_Cpp_Runner.cCompilerPath": "gcc",
