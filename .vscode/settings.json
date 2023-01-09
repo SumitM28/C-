@@ -47,7 +47,8 @@
     "hash_map": "cpp",
     "bitset": "cpp",
     "chrono": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "queue": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled",
   "C_Cpp_Runner.cCompilerPath": "gcc",
