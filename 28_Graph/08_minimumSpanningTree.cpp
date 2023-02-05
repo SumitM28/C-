@@ -134,3 +134,7 @@ int minimumSpanningTree(vector<vector<int>> &edges, int n)
     }
     return minWeight;
 }
+
+int main(){
+    
+}
