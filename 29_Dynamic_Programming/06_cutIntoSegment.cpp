@@ -81,10 +81,10 @@ int cutSegments(int n, int x, int y, int z)
 {
 
     // using recursion
-    int ans = solve(n, x, y, z);
+    // int ans = solve(n, x, y, z);
 
     // using dp approach 1st
-    vector<int> dp(n + 1, -1);
+    // vector<int> dp(n + 1, -1);
     // ans = solveDp1(n, x, y, z);
 
     // using dp approach 2nd
@@ -98,4 +98,8 @@ int cutSegments(int n, int x, int y, int z)
     {
         return ans;
     }
+}
+
+int main(){
+
 }
