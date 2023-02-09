@@ -101,6 +101,31 @@ int minimumCoins(int n, vector<int> days, vector<int> cost)
     // return solveTab(n,days,cost);
 }
 
+// usign space optimization
+int solve(int n, vector<int> days, vector<int> cost){
+    // create 2 queue
+    queue<pair<int,int>> weekly;
+    queue<pair<int,int>> monthly;
+    int ans=0;
+    for(auto day : days){
+
+        // step 1st remove all expire days from the queue
+        while(!weekly.empty() && weekly.front().first+7 <= day ){
+            weekly.pop();
+        }
+        while( !monthly.empty() && monthly.front().first+30 <= day ){
+            monthly.pop();
+        }
+
+        // step 2nd push current day's cost
+        weekly.push({day,ans+cost[1]});
+        monthly.push({day,ans+cost[2]});
+
+        // update the ans
+        ans= min(ans+cost[0], min(weekly.front().second, monthly.front().second));
+    }
+    return ans;
+}
 int main()
 {
 
